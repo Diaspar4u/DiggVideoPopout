@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+
+  "name": "A.D.S. - DIGG Youtube Video popout",
+  "description": "This will break out embedded Digg's YouTube videos and play them in actual YouTube",
+  "version": "1.0",
+  "permissions": [
+   "tabs", "webNavigation"
+   ],
+    "content_scripts": [
+    {
+      "matches": ["*://digg.com/video/*"],
+      "js": ["popup.js"]
+    }
+  ]
+}
