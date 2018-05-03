@@ -1,9 +1,15 @@
 //chrome.tabs.onUpdated.addListener( function (tabId, changeInfo, tab) {
 //  if (changeInfo.status == 'complete') {
 
-var url = document.getElementsByClassName('digg-story__hattip-link')[0]['href'];
+var hattip_link = document.getElementsByClassName('digg-story__hattip-link')[0];
+var url = hattip_link['href'];
 //alert(url);
-window.location = url;
+if (url.match(/youtube/g) != null)
+  window.location = url;
+else {
+  hattip_link.text = url;
+}
+
 /*
     var url = document.getElementById('js--embed-code-iframe').attr('src');
     alert('before: ', url);
